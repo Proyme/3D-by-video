@@ -83,11 +83,11 @@ async def process_gaussian_splatting(job_id: str, video_path: Path):
         input_dir.mkdir(parents=True, exist_ok=True)
         output_dir.mkdir(parents=True, exist_ok=True)
         
-        # Étape 1: Extraire frames
-        num_frames = extract_frames_from_video(video_path, input_dir, fps=2)
+        # Étape 1: Extraire frames (augmenté à 3 FPS pour vidéos courtes)
+        num_frames = extract_frames_from_video(video_path, input_dir, fps=3)
         
-        if num_frames < 20:
-            raise Exception(f"Pas assez de frames: {num_frames}. Vidéo trop courte?")
+        if num_frames < 10:
+            raise Exception(f"Pas assez de frames: {num_frames}. Vidéo trop courte (minimum 5 secondes)")
         
         jobs_status[job_id]["progress"] = 20
         jobs_status[job_id]["message"] = "COLMAP: Structure from Motion..."
