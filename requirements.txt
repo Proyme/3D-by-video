@@ -8,8 +8,9 @@ python-multipart==0.0.6
 pydantic==2.5.3
 
 # Traitement vidéo et images
-opencv-python==4.9.0.80
-opencv-contrib-python==4.9.0.80
+# opencv-python==4.9.0.80  # Conflit avec nerfstudio qui requiert 4.8.0.76
+# opencv-contrib-python==4.9.0.80
+opencv-python==4.8.0.76
 numpy==1.26.3
 pillow==10.2.0
 
