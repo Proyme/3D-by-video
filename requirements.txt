@@ -24,6 +24,9 @@ nerfstudio==1.0.3
 # COLMAP pour structure from motion
 pycolmap>=0.5.0
 
+# Gaussian Splatting
+plyfile>=0.8.0
+
 # Utilitaires
 aiofiles>=23.2.0
 python-dotenv>=1.0.0
